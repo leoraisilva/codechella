@@ -20,6 +20,8 @@ public class Usuario {
         this.email = email;
     }
 
+    public Usuario(){}
+
     public Address getAddress() {
         return address;
     }

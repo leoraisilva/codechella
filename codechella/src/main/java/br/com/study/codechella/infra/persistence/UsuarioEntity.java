@@ -1,4 +1,4 @@
-package br.com.study.codechella.naoUsar.model;
+package br.com.study.codechella.infra.persistence;
 
 import jakarta.persistence.*;
 
@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "usuario")
-public class CodechellaModel {
+public class UsuarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -22,15 +22,14 @@ public class CodechellaModel {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    public CodechellaModel(String usuarioId, String cpf, String nome, LocalDate dataNascimento, String email) {
-        this.usuarioId = usuarioId;
+    public UsuarioEntity(String cpf, String nome, LocalDate dataNascimento, String email) {
         this.cpf = cpf;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.email = email;
     }
 
-    public CodechellaModel() {}
+    public UsuarioEntity() {}
 
     public String getUsuarioId() {
         return usuarioId;
